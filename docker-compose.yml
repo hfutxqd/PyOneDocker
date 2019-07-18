@@ -1,0 +1,36 @@
+
+version: '3'
+services:
+  mongo:
+    image: mongo:4
+    restart: always
+    networks:
+      net-pyone:
+        ipv4_address: 10.5.0.2
+
+  redis:
+    image: redis:alpine
+    restart: always
+    networks:
+      net-pyone:
+        ipv4_address: 10.5.0.3
+
+  py-one:
+    build: .
+    volumes: 
+      - ./self_config.py:/root/PyOne/self_config.py
+      - ./supervisord.conf:/root/PyOne/supervisord.conf
+    depends_on:
+      - mongo
+      - redis
+    restart: always
+    networks:
+      net-pyone:
+        ipv4_address: 10.5.0.4
+    
+networks:
+  net-pyone:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
