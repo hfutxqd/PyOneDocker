@@ -12,7 +12,7 @@ data_dir=os.path.join(config_dir,'data')
 downloadUrl_timeout="300"
 
 #后台密码设置
-password="SetYourPassword"
+password="Xqd19940625?"
 
 #网站名称
 title="我的云盘"
@@ -88,8 +88,8 @@ od_users={
         "share_path": "/", 
         "other_name": "网盘1区", 
         "od_type": "nocn", 
-        "client_id": "", 
-        "client_secret": "", 
+        "client_id": "ab72f016-502a-4ebb-b925-0d2ac99d939d", 
+        "client_secret": "jw:_2Q42hIIGP5WYWS:Y.bZB-Q?B@8XG", 
         "order": 1
     }
 }

@@ -16,7 +16,8 @@ services:
         ipv4_address: 10.5.0.3
 
   py-one:
-    build: .
+    build:
+      context: .
     volumes: 
       - ./self_config.py:/root/PyOne/self_config.py
       - ./supervisord.conf:/root/PyOne/supervisord.conf
